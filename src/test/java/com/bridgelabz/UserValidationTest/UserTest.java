@@ -4,7 +4,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -22,8 +21,8 @@ public class UserTest {
         }
         @Test
     public void firstNameHappyTest(){
-            boolean firstName = user.checkFirstName("Prathmesh");
-            Assert.assertTrue(firstName);
+            boolean firstName = user.checkFirstName(null);
+            Assert.assertEquals(true,firstName);
         }
     @Test
     public void firstNameSadTest(){
@@ -73,7 +72,7 @@ public class UserTest {
 
     @Parameterized.Parameters
     public static Collection input(){
-    return Arrays.asList( new String[] {"prathmesh.32@gmai.com" , "prathmesh123@gmail.com"});
+    return Arrays.asList( new String[] {"prathmesh.32@gmai.com","prathmesh123@gmail.com"});
     }
    @Test
     public void checkEmailWithMultipleInputs(){
